@@ -9,8 +9,13 @@ import { ServiceResultFactory } from '../domain/factories/serviceResultFactory';
 export default class VirtualRoomService {
   constructor(private readonly httpService: HttpService) {}
 
-  getAll(): string {
-    return 'Aqui esta todas as salas:';
+  async getAll(): Promise<IClassroom[] | any> {
+    try {
+      console.log('Chamando Scheduling GET');
+      return await lastValueFrom(this.httpService.get(''));
+    } catch (error) {
+      return ServiceResultFactory.fatal(error) as any;
+    }
   }
 
   async scheduleVirtualRoom(
