@@ -10,33 +10,12 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "paths": {
-      "@infra/*": [
-        "src/infra/*"
-      ],
-      "@crossCutting/*": [
-        "src/cross-cutting/*"
-      ],
-      "@main/*": [
-        "src/main/*"
-      ],
-      "@domain/*": [
-        "src/domain/*"
-      ],
-      "@presentation/*": [
-        "src/presentation/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ]
-    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "resolveJsonModule": true
+    "noFallthroughCasesInSwitch": false
   }
 }

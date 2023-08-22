@@ -8,15 +8,16 @@ export class VirtualRoomController {
   constructor(private readonly appService: VirtualRoomsService) {}
 
   @Get('/class')
-  getHello(): string {
-    return this.appService.getAll();
+  getHello(@Res() response: Response<IClassroom | number | any>): Response {
+    const result = this.appService.getAll();
+    return response.status(201).json(result);
   }
 
   @Post('/classroom')
   async scheduleClassroom(
     @Req() request: Request,
     @Res() response: Response<IClassroom | number>,
-  ): Promise<IClassroom> {
+  ): Promise<Response /* Alterar depois*/> {
     const result = await this.appService.scheduleVirtualRoom(request.body);
 
     return response.status(201).json(result);
