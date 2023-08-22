@@ -16,7 +16,7 @@ export class VirtualRoomController {
   async scheduleClassroom(
     @Req() request: Request,
     @Res() response: Response<IClassroom | number>,
-  ): Promise<IClassroom> {
+  ): Promise<Response /* Alterar depois */> {
     const result = await this.appService.scheduleVirtualRoom(request.body);
 
     return response.status(201).json(result);
